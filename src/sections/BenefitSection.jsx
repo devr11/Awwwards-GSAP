@@ -1,16 +1,15 @@
-import React from "react";
-import ClipPathTitle from "../components/ClipPathTitle";
 import { useGSAP } from "@gsap/react";
+import ClipPathTitle from "../components/ClipPathTitle";
 import gsap from "gsap";
 import VideoPinSection from "../components/VideoPinSection";
 
-const   BenefitSection = () => {
+const BenefitSection = () => {
   useGSAP(() => {
     const revealTl = gsap.timeline({
       delay: 1,
       scrollTrigger: {
         trigger: ".benefit-section",
-        start: "20% 80%",
+        start: "top 60%",
         end: "top top",
         scrub: 1.5,
       },
@@ -18,27 +17,27 @@ const   BenefitSection = () => {
 
     revealTl
       .to(".benefit-section .first-title", {
-        opacity: 1,
         duration: 1,
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
+        clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
         ease: "circ.out",
       })
       .to(".benefit-section .second-title", {
-        opacity: 1,
         duration: 1,
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
+        clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
         ease: "circ.out",
       })
       .to(".benefit-section .third-title", {
-        opacity: 1,
         duration: 1,
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
+        clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
         ease: "circ.out",
       })
       .to(".benefit-section .fourth-title", {
-        opacity: 1,
         duration: 1,
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
+        clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
         ease: "circ.out",
       });
   });

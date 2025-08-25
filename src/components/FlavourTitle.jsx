@@ -1,32 +1,68 @@
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import { SplitText } from 'gsap/all'
-import React from 'react'
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
-const FlavourTitle = () => {
+const FlavorTitle = () => {
   useGSAP(() => {
-    gsap.to(".flavor-bg-text", {
-      // scrollTrigger: {
-      //   trigger: ".flavor-section",
-      //   start: "top bottom",
-      //   end: "bottom top",
-      //   scrub: true
-      // },
-      scale: 1.2,
-      opacity: 0.1
-    })
-  })
+    const firstTextSplit = SplitText.create(".first-text-split h1", {
+      type: "chars",
+    });
+    const secondTextSplit = SplitText.create(".second-text-split h1", {
+      type: "chars",
+    });
+
+    gsap.from(firstTextSplit.chars, {
+      yPercent: 200,
+      stagger: 0.02,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: ".flavor-section",
+        start: "top 30%",
+      },
+    });
+
+    gsap.to(".flavor-text-scroll", {
+      duration: 1,
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      scrollTrigger: {
+        trigger: ".flavor-section",
+        start: "top 10%",
+      },
+    });
+
+    gsap.from(secondTextSplit.chars, {
+      yPercent: 200,
+      stagger: 0.02,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: ".flavor-section",
+        start: "top 1%",
+      },
+    });
+  });
 
   return (
-    <div className='absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center pointer-events-none z-0'>
-      <h2 className='flavor-bg-text text-[8vw] font-black uppercase text-dark-brown opacity-10'>
-        Flavors
-      </h2>
-      <p className='text-dark-brown text-xl font-semibold tracking-widest upplercase mt-4'>
-        Choose Your Favorite
-      </p>
-    </div>
-  )
-}
+    <div className="general-title col-center h-full 2xl:gap-32 xl:gap-24 gap-16">
+      <div className="overflow-hidden 2xl:py-0 py-3 first-text-split">
+        <h1>We have 6</h1>
+      </div>
 
-export default FlavourTitle
+      <div
+        style={{
+          clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+        }}
+        className="flavor-text-scroll"
+      >
+        <div className="bg-mid-brown pb-5 2xl:pt-0 pt-3 2xl:px-5 px-3">
+          <h2 className="text-milk">freaking</h2>
+        </div>
+      </div>
+
+      <div className="overflow-hidden 2xl:py-0 py-3 second-text-split">
+        <h1>delicious flavors</h1>
+      </div>
+    </div>
+  );
+};
+
+export default FlavorTitle;

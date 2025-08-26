@@ -26,7 +26,6 @@ function App() {
       <NavBar />
        <div id="smooth-wrapper">
     <div id="smooth-content">
-
       <HeroSection />
       <MessageSection />
       <FlavourSection />

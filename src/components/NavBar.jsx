@@ -32,9 +32,9 @@ const Navbar = () => {
     <div>
       <nav className='w-[100%] px-[3vw] py-[1.8vw] fixed z-[999] left-0  '>
         <div className='flex justify-between items-center'>
-            <img src={logo}></img>
-            <TbMenu className='bar text-[1.8vw]' />
-            <button className='uppercase text-[#523122] text-[1vw] px-[1.9vw] py-[1vw] font-semibold bg-[#FEF3F0] rounded-[3vw]'>Find in Stores</button>
+            <img className='' src={logo}></img>
+      <TbMenu className='bar text-[2.3vw] cursor-pointer' />
+            <button className='uppercase text-[#523122] text-[1vw] px-[1.9vw] py-[1vw] font-semibold bg-[#FEF3F0] rounded-[3vw] '>Find in Stores</button>
         </div>
       </nav>
 
@@ -50,7 +50,7 @@ const Navbar = () => {
             <li className='uppercase leading-[1.6vw] tracking-[-.5vw] text-[6.3vw] font-semibold text-[#523122]'>Contacts</li>
           </ul>
         </div>
-        <IoCloseSharp className='absolute close top-[10%] text-[3vw] text-[#7E3327] left-1/2 -translate-x-1/2' />
+        <IoCloseSharp className='absolute close top-[10%] cursor-pointer text-[3vw] text-[#7E3327] left-1/2 -translate-x-1/2' />
 
         <div className='w-[50%]'>
           <img className='w-full h-full' src={navi}></img>

@@ -1,5 +1,4 @@
 # Project SPYLT
-A full fleghed clone
 
 ![alt text](public/Images/Final.png)
 A modern Awwards winning Website which is a clone of SPYLT made using GSAP.
